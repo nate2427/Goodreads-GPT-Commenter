@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Goodreads Commenter",
+  "description": "Uses ChatGPT to comment on a list of books on Goodreads. This bot is created with the intent to scale sells for course creators by targeting their audience that are already purchasing their course topic, but in book format. You now know that the they want to purchase a book because they are on the site, and you also know that they are looking within your niche because of the niche of the book. Now you just have to convince the client why adding your course as an add on to their material is all you have to do.",
+  "version": "1.0",
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
